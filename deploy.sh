@@ -22,7 +22,9 @@ download_deps() {
   get_minos_resource bin/bash bash
   get_minos_resource bin/curl curl
   get_minos_resource bin/file file
+  get_minos_resource bin/gawk gawk
   get_minos_resource bin/git git
+  get_minos_resource bin/make make
   get_minos_resource usr/bin/tput ncurses-bin
   get_minos_resource bin/tar tar
   get_minos_resource usr/share/terminfo terminfo
