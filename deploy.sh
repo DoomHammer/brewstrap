@@ -25,12 +25,13 @@ download_deps() {
   get_minos_resource bin/git git
   get_minos_resource usr/bin/tput ncurses-bin
   get_minos_resource bin/tar tar
+  get_minos_resource usr/share/terminfo terminfo
 }
 
 prepare_dist() {
   ensure_cd $DIST_DIR
   [ -f $TARBALL ] && rm $TARBALL
-  tar cf $TARBALL -C $DEPLOY_DIR bin bin.real include lib share/file/magic.mgc usr/bin
+  tar cf $TARBALL -C $DEPLOY_DIR bin bin.real include lib share/file/magic.mgc usr/bin usr/share
   cat $BREWSTRAP $TARBALL > $DIST_DIR/brewstrap-$VERSION.sh
 }
 

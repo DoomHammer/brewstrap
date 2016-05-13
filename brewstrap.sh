@@ -27,6 +27,7 @@ EORUBY
     linuxbrew-install
   export PATH=$PATH:$BREWSTRAP_DIR/bin
   export MAGIC=$BREWSTRAP_DIR/share/file/magic.mgc
+  export TERMINFO=$BREWSTRAP_DIR/usr/share/terminfo
   ruby linuxbrew-install
   brew tap homebrew/dupes git://github.com/Linuxbrew/homebrew-dupes.git
   # Following https://github.com/Linuxbrew/brew/issues/32
