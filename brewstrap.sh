@@ -21,7 +21,7 @@ after_extraction() {
 EORUBY
   sed -i -e "s@/bin/bash@$BREWSTRAP_DIR/bin/bash@" \
     -e "s@/usr/bin/curl@$BREWSTRAP_DIR/bin/curl@" \
-    -e "s@/usr/bin/which@/bin/which@" \
+    -e "s@/usr/bin/which@$(which which)@" \
     -e '/HOMEBREW_REPO.*=/s@https://@git://@' \
     -e 's@# no analytics.*@system "#{HOMEBREW_PREFIX}/Cellar/brewstrap/'$VERSION'/bin/brewstrap", "--fixpaths"@' \
     linuxbrew-install
@@ -95,8 +95,8 @@ fix_paths() {
     -e "s@/usr/bin/curl@$BREWSTRAP_DIR/bin/curl@" \
     -e "s@/usr/bin/file@$BREWSTRAP_DIR/bin/file@" \
     -e "s@/usr/bin/tput@$BREWSTRAP_DIR/usr/bin/tput@" \
-    -e "s@/usr/bin/which@/bin/which@" \
-    -e "s@/usr/bin/awk@/bin/awk@" \
+    -e "s@/usr/bin/which@$(which which)@" \
+    -e "s@/usr/bin/awk@$(which awk)@" \
     $HOME/.linuxbrew/bin/brew \
     $HOME/.linuxbrew/Library/brew.sh \
     $HOME/.linuxbrew/Library/ENV/scm/git \
