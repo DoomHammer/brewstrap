@@ -106,7 +106,7 @@ fix_paths() {
     $HOME/.linuxbrew/Library/Homebrew/tap.rb
 }
 
-if [ "x$1" == "x--fixpaths" ]; then
+if [ "x$1" = "x--fixpaths" ]; then
   fix_paths
   exit 0
 fi
